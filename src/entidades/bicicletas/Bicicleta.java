@@ -5,6 +5,12 @@ import java.util.StringTokenizer;
 import interfaces.ObjetosConSalidaDeDatos;
 import interfaces.ObjetosQueSeEjecutan;
 
+/**
+ * Esta clase representa una bicicleta, con los elementos y acciones comunes a estas.
+ * 
+ * @author Daniel Serrano Torres
+ * @author Álvaro Quesada Pimentel
+ */
 public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos {
 
 	protected double velocidadactual;
@@ -101,7 +107,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	}
 	
 	/**
-	 * Método para obtener una salida de datos de un objeto.
+	 * M√©todo para obtener una salida de datos de un objeto.
 	 * 
 	 * @return Una cadena de texto separada por tokens.
 	 */
@@ -206,7 +212,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	 * 
 	 * @return Espacio recorrido por la bicicleta.
 	 */
-	public double getEspacioRecorrido(){
+	public double getEspacioRecorrido() {
 		return espaciorecorrido;
 	}
 	
@@ -220,9 +226,9 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	}
 	
 	/**
-	 * Obtiene los piónes y sus dientes.
+	 * Obtiene los piñones y sus dientes.
 	 * 
-	 * @return Una lista de los piónes y sus dientes.
+	 * @return Una lista de los piñones y sus dientes.
 	 */
 	public int[] getPinhones() {
 		return pinhones;
