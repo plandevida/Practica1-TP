@@ -8,12 +8,10 @@ public class Manager {
 	private Ciclista ciclista;
 	private Bicicleta bicicleta;
 	
-	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		//
+		
 	}
-
 }
