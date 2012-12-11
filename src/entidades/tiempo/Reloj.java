@@ -1,6 +1,8 @@
 package entidades.tiempo;
 
-public class Reloj extends Contador {
+import interfaces.ObjetosConSalidaDeDatos;
+
+public class Reloj extends Contador implements ObjetosConSalidaDeDatos{
 	private int segundos;
 	private int minutos;
 	private int horas;
@@ -24,6 +26,14 @@ public class Reloj extends Contador {
 				}
 			}
 		}
+	}
+	
+	public void mostrarDatos() {
+		System.out.println("-- Reloj:");
+		System.out.println(getImpulsos());
+		System.out.println(getSegundos());
+		System.out.println(getMinutos());
+		System.out.println("-- Fin reloj --");
 	}
 	
 	public static void main(String[] args) {

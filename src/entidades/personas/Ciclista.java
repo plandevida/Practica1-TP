@@ -1,17 +1,18 @@
 package entidades.personas;
 
+import interfaces.ObjetosConSalidaDeDatos;
 import entidades.bicicletas.Bicicleta;
 
-public class Ciclista extends Persona {
+public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 
 	private Bicicleta bicicletamontada;
 	
-	public Ciclista(Bicicleta bicicletaamontar) {
+	public Ciclista(String nombre, Bicicleta bicicletaamontar) {
 		/** 
 		 * Demomento el peso no es relevante, ni el cansancio
 		 * @see Persona
 		 */
-		super(50, 100);
+		super(nombre, 50, 100);
 		bicicletamontada = bicicletaamontar;
 	}
 	
@@ -20,6 +21,13 @@ public class Ciclista extends Persona {
 		pedalear();
 		
 		return false;
+	}
+	
+	public void mostrarDatos() {
+		System.out.println("-- Ciclista: " + getNombre());
+		System.out.println("peso" + getPeso());
+		System.out.println("cansancio: " + getCansancio());
+		System.out.println("-- Fin ciclista --");
 	}
 	
 	private void pedalear() {

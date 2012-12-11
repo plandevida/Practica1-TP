@@ -1,8 +1,9 @@
 package entidades.bicicletas;
 
+import interfaces.ObjetosConSalidaDeDatos;
 import interfaces.ObjetosQueSeEjecutan;
 
-public class Bicicleta implements ObjetosQueSeEjecutan {
+public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos{
 
 	private int INCREMENTO_PEDALADA = 5;
 	
@@ -16,6 +17,11 @@ public class Bicicleta implements ObjetosQueSeEjecutan {
 		velocidad--;
 		
 		return true;
+	}
+	
+	public void mostrarDatos() {
+		System.out.println("-- Bicicleta: ");
+		System.out.println("velocidad: " + getVelocidad());
 	}
 	
 	public void darPedalada() {

@@ -2,11 +2,13 @@ package entidades.personas;
 
 import interfaces.ObjetosQueSeEjecutan;
 
-public class Persona implements ObjetosQueSeEjecutan{
+public class Persona implements ObjetosQueSeEjecutan {
+	private String nombre;
 	private int peso;
 	private int cansancio;
 	
-	public Persona(int pesopersona, int estadofisico) {
+	public Persona(String nombrepersona, int pesopersona, int estadofisico) {
+		nombre = nombrepersona;
 		peso = pesopersona;
 		cansancio = (estadofisico >= 0 && estadofisico < 100) ? estadofisico : 100;
 	}
@@ -24,5 +26,13 @@ public class Persona implements ObjetosQueSeEjecutan{
 	}
 	public void setCansancio(int cansancio) {
 		this.cansancio = cansancio;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 }
