@@ -1,7 +1,6 @@
 package entidades.personas;
 
 import entidades.bicicletas.Bicicleta;
-import entidades.tiempo.Reloj;
 
 public class Ciclista extends Persona {
 
@@ -16,7 +15,14 @@ public class Ciclista extends Persona {
 		bicicletamontada = bicicletaamontar;
 	}
 	
-	public void pedalear(Reloj reloj) {
+	@Override
+	public boolean ejecutar() {
+		pedalear();
+		
+		return false;
+	}
+	
+	private void pedalear() {
 		bicicletamontada.darPedalada();
 	}
 	
