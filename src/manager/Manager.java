@@ -47,6 +47,9 @@ public class Manager {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		Manager manager = new Manager();
 		
+		manager.iniciar();
+		manager.ejecutar();
 	}
 }

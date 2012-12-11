@@ -9,7 +9,11 @@ public class Contador implements ObjetosQueSeEjecutan {
 		impulsos = 0;
 	}
 	
-	public boolean ejecutar() { return true; }
+	public boolean ejecutar() { 
+		nuevoImpulso();
+		
+		return true;
+	}
 	
 	public void nuevoImpulso() {
 		impulsos++;

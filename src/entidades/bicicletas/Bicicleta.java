@@ -8,7 +8,15 @@ public class Bicicleta implements ObjetosQueSeEjecutan {
 	
 	private int velocidad;
 	
-	public boolean ejecutar() {return true;}
+	public Bicicleta() {
+		velocidad = 0;
+	}
+	
+	public boolean ejecutar() {
+		velocidad--;
+		
+		return true;
+	}
 	
 	public void darPedalada() {
 		setVelocidadIncremento(INCREMENTO_PEDALADA);

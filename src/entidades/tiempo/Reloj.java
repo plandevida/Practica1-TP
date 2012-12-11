@@ -13,7 +13,8 @@ public class Reloj extends Contador {
 	
 	@Override
 	public void nuevoImpulso() {
-		if (++impulsos >= 60) {
+		
+		if (++impulsos >= 100) {
 			impulsos = 0;
 			if (++segundos >= 60) {
 				segundos = 0;
@@ -24,11 +25,11 @@ public class Reloj extends Contador {
 			}
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		Reloj reloj = new Reloj();
 		
-		for (int i=0; i < 25920000; i++) {
+		for (int i=0; i < (100*60*60*60*60+1600000); i++) {
 			reloj.nuevoImpulso();
 			
 			System.out.println("impulsos: " +reloj.getImpulsos());
