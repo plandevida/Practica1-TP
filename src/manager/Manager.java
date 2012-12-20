@@ -21,7 +21,7 @@ public class Manager {
 	public void iniciar() {
 		reloj = new Reloj();
 		bicicleta = new Bicicleta();
-		ciclista = new Ciclista("Pepe", bicicleta);
+		ciclista = new Ciclista("Pepe", 0.5, bicicleta, reloj);
 		
 		listaejecutables = new ArrayList<ObjetosQueSeEjecutan>();
 		

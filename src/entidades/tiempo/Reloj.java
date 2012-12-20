@@ -1,5 +1,7 @@
 package entidades.tiempo;
 
+import java.util.StringTokenizer;
+
 import interfaces.ObjetosConSalidaDeDatos;
 
 public class Reloj extends Contador implements ObjetosConSalidaDeDatos{
@@ -28,12 +30,14 @@ public class Reloj extends Contador implements ObjetosConSalidaDeDatos{
 		}
 	}
 	
-	public void mostrarDatos() {
+	public StringTokenizer mostrarDatos() {
 		System.out.println("-- Reloj:");
 		System.out.println(getImpulsos());
 		System.out.println(getSegundos());
 		System.out.println(getMinutos());
 		System.out.println("-- Fin reloj --");
+		
+		return null;
 	}
 	
 	public static void main(String[] args) {
