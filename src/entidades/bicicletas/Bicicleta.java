@@ -62,6 +62,14 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos{
 		
 		return espaciodepedalada;
 	}
+	
+	public double velocidadDeBici(int cadencia){
+		
+		double velocidadbici = espacioDePedalada() / cadencia;
+		
+		return velocidadbici;
+	}
+	
 	/***/
 	public StringTokenizer mostrarDatos() {
 		System.out.println("-- Bicicleta: ");
