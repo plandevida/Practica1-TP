@@ -33,6 +33,30 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos{
 		return true;
 	}
 	
+	/****/
+	public int relacionDeTransmision(){
+		
+		int relaciondetrasminsion = platoactual/pinhonactual;
+		
+		return relaciondetrasminsion;
+		
+	}
+	
+	public double recorridoLinealDeLaRueda (){
+		
+		double recorridolinealdelarueda = 3.14 *this.radiorueda;
+		
+		return recorridolinealdelarueda;
+		
+	}
+	
+	public double espacioDePedalada (){
+		
+		double espaciodepedalada = recorridoLinealDeLaRueda() * relacionDeTransmision();
+		
+		return espaciodepedalada;
+	}
+	/***/
 	public StringTokenizer mostrarDatos() {
 		System.out.println("-- Bicicleta: ");
 		System.out.println("velocidad: " + getVelocidad());
@@ -68,7 +92,8 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos{
 	public int[] getPinhones() {
 		return pinhones;
 	}
-
+	
+	
 	public void setPinhones(int[] pinhones) {
 		this.pinhones = pinhones;
 	}
