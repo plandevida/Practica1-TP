@@ -1,6 +1,5 @@
 package manager;
 
-import interfaces.ObjetosConSalidaDeDatos;
 import interfaces.ObjetosQueSeEjecutan;
 
 import java.util.ArrayList;
@@ -8,15 +7,19 @@ import java.util.List;
 
 import entidades.bicicletas.Bicicleta;
 import entidades.personas.Ciclista;
+import entidades.salidadatos.SalidaDatos;
 import entidades.tiempo.Reloj;
 
 public class Manager {
 
 	private List<ObjetosQueSeEjecutan> listaejecutables;
-	private List<ObjetosConSalidaDeDatos> listasalidadatos;
+	private SalidaDatos salidadatos;
 	private Ciclista ciclista;
 	private Bicicleta bicicleta;
 	private Reloj reloj;
+	
+	// Estado de la ejecución del programa
+	private boolean running;
 	
 	public void iniciar() {
 		reloj = new Reloj();
@@ -29,16 +32,20 @@ public class Manager {
 		listaejecutables.add(bicicleta);
 		listaejecutables.add(ciclista);
 		
-		listasalidadatos = new ArrayList<ObjetosConSalidaDeDatos>();
+		salidadatos = new SalidaDatos();
+		
+		salidadatos.registrarObjetoConSalidaDatos(reloj);
+		salidadatos.registrarObjetoConSalidaDatos(bicicleta);
+		salidadatos.registrarObjetoConSalidaDatos(ciclista);
 	}
 	
 	public void ejecutar() {
 		
-		for (ObjetosQueSeEjecutan objetoejecutable : listaejecutables) {
-			objetoejecutable.ejecutar();
-			
-			for (ObjetosConSalidaDeDatos objetosalidadatos : listasalidadatos) {
-				objetosalidadatos.mostrarDatos();
+		while ( running ) {
+			for (ObjetosQueSeEjecutan objetoejecutable : listaejecutables) {
+				objetoejecutable.ejecutar();
+				
+				salidadatos.mostrarDatos();
 			}
 		}
 	}

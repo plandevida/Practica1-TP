@@ -13,9 +13,10 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	private double cadencia;
 
 	public Ciclista(String nombre, double cadenciaCiclista, Bicicleta bicicletaamontar, Reloj relojCiclista) {
-		/** 
+		/**
 		 * Demomento el peso no es relevante, ni el cansancio
-		 * @see Persona
+		 * 
+		 * Esta clase hereda de persona @link Persona
 		 */
 		super(nombre, 50, 100);
 		cadencia = cadenciaCiclista;
@@ -27,16 +28,19 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	public boolean ejecutar() {
 		pedalear();
 		
-		return false;
+		return true;
 	}
 	
 	public StringTokenizer mostrarDatos() {
-		System.out.println("-- Ciclista: " + getNombre());
-		System.out.println("peso" + getPeso());
-		System.out.println("cansancio: " + getCansancio());
-		System.out.println("-- Fin ciclista --");
-		
-		return null;
+		StringBuilder mensaje = new StringBuilder(getNombre());
+		mensaje.append(",");
+		mensaje.append(getPeso());
+		mensaje.append(",");
+		mensaje.append(getCadencia());
+
+		StringTokenizer stringTokenizer = new StringTokenizer(mensaje.toString(), ",");
+
+		return stringTokenizer;
 	}
 	
 	private void pedalear() {

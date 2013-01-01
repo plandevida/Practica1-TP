@@ -31,13 +31,28 @@ public class Reloj extends Contador implements ObjetosConSalidaDeDatos{
 	}
 	
 	public StringTokenizer mostrarDatos() {
-		System.out.println("-- Reloj:");
-		System.out.println(getImpulsos());
-		System.out.println(getSegundos());
-		System.out.println(getMinutos());
-		System.out.println("-- Fin reloj --");
+		StringBuilder mensaje = new StringBuilder();
+		mensaje.append(getHoras());
+		mensaje.append(",");
+		mensaje.append(getMinutos());
+		mensaje.append(",");
+		mensaje.append(getSegundos());
+		mensaje.append(",");
+		mensaje.append(getImpulsos());
 		
-		return null;
+		return new StringTokenizer(mensaje.toString(), ",");
+	}
+
+	public int getSegundos() {
+		return segundos;
+	}
+
+	public int getMinutos() {
+		return minutos;
+	}
+	
+	public int getHoras() {
+		return horas;
 	}
 	
 	public static void main(String[] args) {
@@ -52,17 +67,4 @@ public class Reloj extends Contador implements ObjetosConSalidaDeDatos{
 			System.out.println("horas: " + reloj.getHoras());
 		}
 	}
-
-	public int getSegundos() {
-		return segundos;
-	}
-
-	public int getMinutos() {
-		return minutos;
-	}
-	
-	public int getHoras() {
-		return horas;
-	}
-
 }

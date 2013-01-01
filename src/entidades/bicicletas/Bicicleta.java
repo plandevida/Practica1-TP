@@ -71,10 +71,10 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 
 	/***/
 	public StringTokenizer mostrarDatos() {
-		System.out.println("-- Bicicleta: ");
-		System.out.println("velocidad: " + getVelocidad());
-
-		return null;
+		StringBuilder mensaje = new StringBuilder();
+		mensaje.append(getVelocidad());
+		
+		return new StringTokenizer(mensaje.toString(), ",");
 	}
 
 	public void darPedalada(double cadenciaciclista) {
@@ -82,12 +82,24 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 		
 		setVelocidadIncremento(velocidad);
 	}
+	
+	public void incrementarPinhon() {
+		if (pinhonactual < pinhones.length - 1) {
+			pinhonactual++;
+		}
+	}
+	
+	public void decrementarPinhon() {
+		if (pinhonactual > 0) {
+			pinhonactual--;
+		}
+	}
 
 	private void setVelocidadIncremento(double incrementovelocidad) {
 		velocidadactual += incrementovelocidad;
 	}
 
-	public void setVelocidad(int velocidadnueva) {
+	public void setVelocidad(double velocidadnueva) {
 		velocidadactual = velocidadnueva;
 	}
 
@@ -95,28 +107,12 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 		return velocidadactual;
 	}
 
-	public double getVelocidadactual() {
-		return velocidadactual;
-	}
-
-	public void setVelocidadactual(double velocidadactual) {
-		this.velocidadactual = velocidadactual;
-	}
-
 	public int[] getPinhones() {
 		return pinhones;
 	}
 
-	public void setPinhones(int[] pinhones) {
-		this.pinhones = pinhones;
-	}
-
 	public int[] getPlatos() {
 		return platos;
-	}
-
-	public void setPlatos(int[] platos) {
-		this.platos = platos;
 	}
 
 	public int getPlatoactual() {
@@ -139,29 +135,24 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 		return radiorueda;
 	}
 
-	public void setRadiorueda(int radiorueda) {
-		this.radiorueda = radiorueda;
-	}
-
-	// private enum Pinhones {
-	// UNO(10), //0
-	// DOS(20), //1
-	// TRES(30), //2
-	// CUATRO(40); //3
-	//
-	// private int numerodedientes;
-	//
-	// Pinhones(int numerodientes) {
-	// numerodedientes = numerodientes;
-	// }
-	//
-	// public int getNumeroDientes() {
-	// return numerodedientes;
-	// }
-	//
-	// public Pinhones desdeIndice(int indice) {
-	// return ( indice < Pinhones.values().length) ? Pinhones.values()[indice] :
-	// null;
-	// }
-	// }
+//	 private enum Pinhones {
+//		 UNO(10), //0
+//		 DOS(20), //1
+//		 TRES(30), //2
+//		 CUATRO(40); //3
+//		
+//		 private int numerodedientes;
+//		
+//		 Pinhones(int numerodientes) {
+//			 numerodedientes = numerodientes;
+//		 }
+//		
+//		 public int getNumeroDientes() {
+//			 return numerodedientes;
+//		 }
+//		
+//		 public Pinhones desdeIndice(int indice) {
+//			 return ( indice < Pinhones.values().length) ? Pinhones.values()[indice] : null;
+//		 }
+//	 }
 }
