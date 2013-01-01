@@ -9,12 +9,12 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos{
 	
 	protected double velocidadactual;
 	
-	// El array representa los piñones de la bicicleta con el indice
-	// del array y su valor es el número de dientes del piñón
+	// El array representa los piÃ±ones de la bicicleta con el indice
+	// del array y su valor es el nÃºmero de dientes del piÃ±Ã³n
 	protected int[] pinhones = new int[] {15, 20, 25, 30};
 	
 	// El array representa los plato de la bicicleta con el indice
-	// del array y su valor es el número de dientes del plato
+	// del array y su valor es el nÃºmero de dientes del plato
 	protected int[] platos = new int[] {30, 40, 50};
 	
 	protected int platoactual;
