@@ -17,8 +17,12 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos{
 	// del array y su valor es el número de dientes del plato
 	protected int[] platos = new int[] {30, 40, 50};
 	
+	//Continen el indice del piñón que se esta utilizando
 	protected int platoactual;
+	
+	//Continen el indice del plato que se esta utilizando
 	protected int pinhonactual;
+	
 	protected int radiorueda;
 	
 	public Bicicleta() {
@@ -33,18 +37,20 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos{
 		return true;
 	}
 	
-	/****/
+	/**
+	 * Relación entre el plato y piñón que se están usando actualmente.
+	 * 
+	 */
 	public int relacionDeTransmision(){
 		
-		int relaciondetrasminsion = platoactual/pinhonactual;
+		int relaciondetrasminsion = platos[platoactual] / pinhones[pinhonactual];
 		
 		return relaciondetrasminsion;
-		
 	}
 	
 	public double recorridoLinealDeLaRueda (){
 		
-		double recorridolinealdelarueda = 3.14 *this.radiorueda;
+		double recorridolinealdelarueda = Math.PI * this.radiorueda;
 		
 		return recorridolinealdelarueda;
 		
@@ -128,10 +134,6 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos{
 
 	public void setRadiorueda(int radiorueda) {
 		this.radiorueda = radiorueda;
-	}
-
-	protected int getRelacionPlatos() {
-		return ( platos[platoactual]/pinhones[pinhonactual] );
 	}
 	
 //	private enum Pinhones {
