@@ -73,12 +73,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 		return velocidadbici;
 	}
 	
-	public void setEspacioRecorrido(double espaciodepedalada){
-		
-		espaciorecorrido += espaciodepedalada;
-	}
-
-	/***/
+	
 	public StringTokenizer mostrarDatos() {
 		StringBuilder mensaje = new StringBuilder();
 		mensaje.append(getVelocidad());
@@ -104,6 +99,23 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 			pinhonactual--;
 		}
 	}
+	
+	public void incrementarPlato() {
+		if (platoactual < platos.length - 1) {
+			platoactual++;
+		}
+	}
+	
+	public void decrementarPlato() {
+		if (platoactual > 0) {
+			platoactual--;
+		}
+	}
+	
+	public void setEspacioRecorrido(double espaciodepedalada){
+		
+		espaciorecorrido += espaciodepedalada;
+	}
 
 	private void setVelocidadIncremento(double incrementovelocidad) {
 		velocidadactual += incrementovelocidad;
@@ -112,7 +124,10 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	public void setVelocidad(double velocidadnueva) {
 		velocidadactual = velocidadnueva;
 	}
-
+	
+	public double getEspacioRecorrido(){
+		return espaciorecorrido;
+	}
 	public double getVelocidad() {
 		return velocidadactual;
 	}
