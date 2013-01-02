@@ -24,6 +24,10 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	protected int pinhonactual;
 
 	protected int radiorueda;
+	
+	//Espacio que lleva recorrido
+	
+	protected double espaciorecorrido;
 
 	public Bicicleta() {
 		setVelocidad(0);
@@ -68,6 +72,11 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 
 		return velocidadbici;
 	}
+	
+	public void setEspacioRecorrido(double espaciodepedalada){
+		
+		espaciorecorrido += espaciodepedalada;
+	}
 
 	/***/
 	public StringTokenizer mostrarDatos() {
@@ -80,6 +89,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	public void darPedalada(double cadenciaciclista) {
 		double velocidad = velocidadDeBici(cadenciaciclista);
 		
+		setEspacioRecorrido(espacioDePedalada());
 		setVelocidadIncremento(velocidad);
 	}
 	
