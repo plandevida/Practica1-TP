@@ -21,6 +21,10 @@ public class Manager {
 	// Estado de la ejecución del programa
 	private boolean running;
 	
+	public Manager() {
+		running = true;
+	}
+	
 	public void iniciar() {
 		reloj = new Reloj();
 		bicicleta = new Bicicleta();

@@ -83,7 +83,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	 * @param cadenciaciclista Frecuencia con la que el ciclista da pedaladas.
 	 * @return La velocidad de la bicicleta.
 	 */
-	public double velocidadDeBici(double cadenciaciclista) {
+	private double velocidadDeBici(double cadenciaciclista) {
 
 		double velocidadbici = espacioDePedalada() / cadenciaciclista;
 
@@ -153,7 +153,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	/**
 	 * Cambia el valor del espacio recorrido por la bicicleta.
 	 * 
-	 * @param espaciodepedalada Frecuencia con la que el ciclista da pedaladas.
+	 * @param espaciodepedalada Espacio recorrido por la pedalada.
 	 */
 	public void setEspacioRecorrido(double espaciodepedalada){
 		

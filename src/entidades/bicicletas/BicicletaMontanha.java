@@ -2,6 +2,10 @@ package entidades.bicicletas;
 
 public class BicicletaMontanha extends Bicicleta {
 
+	public BicicletaMontanha() {
+		super();
+	}
+	
 	/**
 	 * @param args
 	 */
@@ -13,7 +17,7 @@ public class BicicletaMontanha extends Bicicleta {
 	}
 	
 	public void setVelocidad(int f) {
-		System.out.println("Bicicleta montaña");
+		System.out.println("Bicicleta montaÃ±a");
 	}
 
 }

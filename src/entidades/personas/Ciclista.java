@@ -26,7 +26,8 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	
 	@Override
 	public boolean ejecutar() {
-		pedalear();
+		if (bicicletamontada.getVelocidad() < 30)
+			pedalear();		
 		
 		return true;
 	}
