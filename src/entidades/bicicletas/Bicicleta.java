@@ -111,7 +111,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 		double velocidad = velocidadDeBici(cadenciaciclista);
 		
 		setEspacioRecorrido(espacioDePedalada());
-		setVelocidadIncremento(velocidad);
+		setVelocidad(velocidad);
 	}
 	
 	/**
