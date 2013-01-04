@@ -18,13 +18,6 @@ public class Manager {
 	private Bicicleta bicicleta;
 	private Reloj reloj;
 	
-	// Estado de la ejecución del programa
-	private boolean running;
-	
-	public Manager() {
-		running = true;
-	}
-	
 	public void iniciar() {
 		reloj = new Reloj();
 		bicicleta = new Bicicleta();
@@ -45,12 +38,11 @@ public class Manager {
 	
 	public void ejecutar() {
 		
-		while ( running ) {
+		while ( reloj.getMinutos() < 2 ) {
 			for (ObjetosQueSeEjecutan objetoejecutable : listaejecutables) {
 				objetoejecutable.ejecutar();
-				
-				salidadatos.mostrarDatos();
 			}
+			salidadatos.mostrarDatos();
 		}
 	}
 	
