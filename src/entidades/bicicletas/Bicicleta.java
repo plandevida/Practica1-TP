@@ -115,6 +115,19 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	}
 	
 	/**
+	 * Decrementa la velocidad de la bicicleta.
+	 */
+	public void frenar() {
+		double velocidad = velocidadDeBici(1);
+		
+		setEspacioRecorrido(espacioDePedalada());
+		
+		double decrementovelocidad = velocidad * 0.1;
+		
+		setVelocidadIncremento(-decrementovelocidad);
+	}
+	
+	/**
 	 * Incrementa el piñón de la bicicleta.
 	 */
 	public void incrementarPinhon() {

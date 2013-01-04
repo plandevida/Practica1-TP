@@ -11,6 +11,8 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	private Bicicleta bicicletamontada;
 	private Reloj reloj;
 	private double cadencia;
+	
+	private boolean frenando = false;
 
 	public Ciclista(String nombre, double cadenciaCiclista, Bicicleta bicicletaamontar, Reloj relojCiclista) {
 		/**
@@ -26,8 +28,18 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	
 	@Override
 	public boolean ejecutar() {
-		if (bicicletamontada.getVelocidad() < 30)
-			pedalear();		
+		if ( !frenando ) {
+			if (bicicletamontada.getVelocidad() < 30)
+				pedalear();
+			else
+				frenando = true;
+		}
+		else {
+			if (bicicletamontada.getVelocidad() < 15)
+				frenando = false;
+				
+			bicicletamontada.frenar();
+		}
 		
 		return true;
 	}
