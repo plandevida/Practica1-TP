@@ -45,7 +45,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	 * 
 	 * @reutrn Un entero que es relación entre ambos valores.
 	 */
-	public int relacionDeTransmision() {
+	private int relacionDeTransmision() {
 
 		int relaciondetrasminsion = platos[platoactual] / pinhones[pinhonactual];
 
@@ -59,7 +59,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	 */
 	private double recorridoLinealDeLaRueda() {
 
-		double recorridolinealdelarueda = Math.PI * this.radiorueda;
+		double recorridolinealdelarueda = Math.PI * radiorueda;
 
 		return recorridolinealdelarueda;
 

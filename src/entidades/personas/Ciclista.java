@@ -60,14 +60,6 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 		bicicletamontada.darPedalada(cadencia);
 	}
 	
-	public void setBicicleta(Bicicleta bicicletaamontar) {
-		bicicletamontada = bicicletaamontar;
-	}
-	
-	public Bicicleta getBicicleta() {
-		return bicicletamontada;
-	}
-	
 	public Bicicleta getBicicletamontada() {
 		return bicicletamontada;
 	}
