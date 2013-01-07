@@ -11,7 +11,7 @@ import org.junit.runners.JUnit4;
 import src.tests.utils.TestUtilidadesCiclista;
 import src.tests.utils.TestUtilidadesBicicleta;
 import entidades.bicicletas.Bicicleta;
-import entidades.tiempo.Reloj;
+
 
 @RunWith(JUnit4.class)
 
@@ -110,6 +110,36 @@ public class TestBicicleta {
 		assertEquals("Error: La velocidad de frenado de la bicicleta no es la correcta", velocidadesperadafrenando, bicicleta.getVelocidad(), 0);
 		
 		
+		
+		//Se comprueban que los piñones se incremente y decrementen correctamente
+		
+		int incrementarpinhonesperado = bicicleta.getPinhonactual() +1;
+		
+		bicicleta.incrementarPinhon();
+		
+		assertEquals("Error: El incremento de piñon de la bicicleta no es la correcta", incrementarpinhonesperado, bicicleta.getPinhonactual(), 0);
+		
+		int decrementarpinhonesperado = bicicleta.getPinhonactual() -1;
+			
+		bicicleta.decrementarPinhon();
+		
+		assertEquals("Error: El decremento de piñon de la bicicleta no es la correcta", decrementarpinhonesperado, bicicleta.getPinhonactual(), 0);
+		
+		
+		
+		//Se comprueban que los platos se incremente y decrementen correctamente
+		
+		int incrementarplatoesperado = bicicleta.getPlatoactual() +1;
+		
+		bicicleta.incrementarPlato();
+		
+		assertEquals("Error: El incremento del plato de la bicicleta no es la correcta", incrementarplatoesperado, bicicleta.getPlatoactual(), 0);
+		
+		int decrementarplatoesperado = bicicleta.getPlatoactual() -1;
+		
+		bicicleta.decrementarPlato();
+		
+		assertEquals("Error: El decremento de piñon de la bicicleta no es la correcta", decrementarplatoesperado, bicicleta.getPlatoactual(), 0);
 	}
 	
 }
