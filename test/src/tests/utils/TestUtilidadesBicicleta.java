@@ -52,4 +52,6 @@ public class TestUtilidadesBicicleta {
 		return recorridolinealdelarueda;
 
 	}
+	
+
 }
