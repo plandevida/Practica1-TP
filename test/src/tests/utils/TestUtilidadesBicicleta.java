@@ -1,4 +1,4 @@
-package tests.utils;
+package src.tests.utils;
 
 
 public class TestUtilidadesBicicleta {
@@ -21,7 +21,7 @@ public class TestUtilidadesBicicleta {
 	 * 
 	 * @return El valor del espacio recorrido.
 	 */
-	private double espacioDePedalada(double radiorueda, int dientesPlato, int dientesPinhon) {
+	public double espacioDePedalada(double radiorueda, int dientesPlato, int dientesPinhon) {
 
 		double espaciodepedalada = recorridoLinealDeLaRueda(radiorueda) * relacionDeTransmision(dientesPlato, dientesPinhon);
 
@@ -33,7 +33,7 @@ public class TestUtilidadesBicicleta {
 	 * 
 	 * @reutrn Un entero que es relación entre ambos valores.
 	 */
-	private int relacionDeTransmision(int dientesPlato, int dientesPinhon) {
+	public int relacionDeTransmision(int dientesPlato, int dientesPinhon) {
 
 		int relaciondetrasminsion = dientesPlato / dientesPinhon;
 
@@ -45,7 +45,7 @@ public class TestUtilidadesBicicleta {
 	 * 
 	 * @return El valor de la longitud de la rueda.
 	 */
-	private double recorridoLinealDeLaRueda(double radiorueda) {
+	public double recorridoLinealDeLaRueda(double radiorueda) {
 
 		double recorridolinealdelarueda = Math.PI * radiorueda;
 

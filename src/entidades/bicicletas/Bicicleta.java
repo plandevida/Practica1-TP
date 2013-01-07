@@ -27,9 +27,19 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	
 	//Espacio que lleva recorrido
 	protected double espaciorecorrido;
-
+	
+	//La relacion de transmision
+	protected int relaciondetrasminsion;
+	
+	//El recorrido lineal de la rueda
+	protected double recorridolinealdelarueda;
+	
+	//El espacio que recorre al dar una pedalada
+	protected double espaciodepedalada;
+	
 	public Bicicleta() {
 		setVelocidad(0);
+		setEspacioRecorrido(0);
 		setPinhonactual(0);
 		setPlatoactual(0);
 		radiorueda = 0.2d;
@@ -47,7 +57,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	 */
 	private int relacionDeTransmision() {
 
-		int relaciondetrasminsion = platos[platoactual] / pinhones[pinhonactual];
+		relaciondetrasminsion = platos[platoactual] / pinhones[pinhonactual];
 
 		return relaciondetrasminsion;
 	}
@@ -59,7 +69,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	 */
 	private double recorridoLinealDeLaRueda() {
 
-		double recorridolinealdelarueda = Math.PI * radiorueda;
+		recorridolinealdelarueda = Math.PI * radiorueda;
 
 		return recorridolinealdelarueda;
 
@@ -72,7 +82,7 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	 */
 	private double espacioDePedalada() {
 
-		double espaciodepedalada = recorridoLinealDeLaRueda() * relacionDeTransmision();
+		espaciodepedalada = recorridoLinealDeLaRueda() * relacionDeTransmision();
 
 		return espaciodepedalada;
 	}
@@ -270,6 +280,33 @@ public class Bicicleta implements ObjetosQueSeEjecutan, ObjetosConSalidaDeDatos 
 	 */
 	public double getRadiorueda() {
 		return radiorueda;
+	}
+	
+	/**
+	 * Obtiene la relacion de transmision.
+	 * 
+	 * @return Valor de la relacion de transmision.
+	 */
+	public double getRelacionDeTransmision(){
+		return relaciondetrasminsion;
+	}
+	
+	/**
+	 * Obtiene el recorrido lineal de la rueda.
+	 * 
+	 * @return Valor del recorrido lineal de la rueda.
+	 */
+	public double getRecorridoLinealDeLaRueda(){
+		return recorridolinealdelarueda;
+	}
+	
+	/**
+	 * Obtiene El espacio que recorre al dar una pedalada.
+	 * 
+	 * @return Valor del espacio de pedalada.
+	 */
+	public double getEspacioDePedalada(){
+		return espaciodepedalada;
 	}
 
 //	 private enum Pinhones {
