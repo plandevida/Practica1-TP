@@ -38,7 +38,7 @@ public class TestReloj {
 	@Test
 	public void testResultadosEsperados() {
 		
-		for ( int i = 0; i < 100*60*60; i++){
+		for ( int i = 0; i < 100*60*60; i++) {
 			
 			reloj.nuevoImpulso();
 			

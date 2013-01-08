@@ -5,10 +5,10 @@ import java.util.StringTokenizer;
 import interfaces.ObjetosConSalidaDeDatos;
 
 public class Reloj extends Contador implements ObjetosConSalidaDeDatos{
-	// Los segundos que lleva, es una unidad mas pequeña q los minutos
+	// Los segundos que lleva, es una unidad mas pequeï¿½a q los minutos
 	private int segundos;
 	
-	// Los minutos que lleva, es una unidad mas pequeña q las horas
+	// Los minutos que lleva, es una unidad mas pequeï¿½a q las horas
 	private int minutos;
 	
 	// Las horas que lleva, es la unidad mas grande del programa
@@ -23,12 +23,12 @@ public class Reloj extends Contador implements ObjetosConSalidaDeDatos{
 	 * Metodo que sirve para contabilizar el tiempo.
 	 * 
 	 * Funciona aumentan los impulsos, cuando estos llegan a 100 
-	 * se añade un segundo, y los impulsos vuelven a cero.
+	 * se aï¿½ade un segundo, y los impulsos vuelven a cero.
 	 * 
-	 * Cuando los segundos llegan a 60 se añade un minuto 
+	 * Cuando los segundos llegan a 60 se aï¿½ade un minuto 
 	 * y los segundos vuelven a 0.
 	 * 
-	 * Cuando los minutos llegan a 60 se añade una hora
+	 * Cuando los minutos llegan a 60 se aï¿½ade una hora
 	 * y los minutos vuelven a 0.
 	 * 
 	 * Las horas no tienen limite
@@ -95,16 +95,16 @@ public class Reloj extends Contador implements ObjetosConSalidaDeDatos{
 	 * 
 	 * Pone un retraso para ir aumentando los impulsos.
 	 */
-	public static void main(String[] args) {
-		Reloj reloj = new Reloj();
-		
-		for (int i=0; i < (100*60*60*60*60+1600000); i++) {
-			reloj.nuevoImpulso();
-			
-			System.out.println("impulsos: " +reloj.getImpulsos());
-			System.out.println("segundos: " + reloj.getSegundos());
-			System.out.println("minutos: " + reloj.getMinutos());
-			System.out.println("horas: " + reloj.getHoras());
-		}
+//	public static void main(String[] args) {
+//		Reloj reloj = new Reloj();
+//		
+//		for (int i=0; i < (100*60*60*60*60+1600000); i++) {
+//			reloj.nuevoImpulso();
+//			
+//			System.out.println("impulsos: " +reloj.getImpulsos());
+//			System.out.println("segundos: " + reloj.getSegundos());
+//			System.out.println("minutos: " + reloj.getMinutos());
+//			System.out.println("horas: " + reloj.getHoras());
+//		}
 	}
 }
