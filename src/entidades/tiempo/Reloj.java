@@ -106,5 +106,5 @@ public class Reloj extends Contador implements ObjetosConSalidaDeDatos{
 //			System.out.println("minutos: " + reloj.getMinutos());
 //			System.out.println("horas: " + reloj.getHoras());
 //		}
-	}
+//	}
 }
