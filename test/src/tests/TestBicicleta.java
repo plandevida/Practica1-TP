@@ -40,7 +40,7 @@ public class TestBicicleta {
 		assertNotNull("Error: La bici es nula", bicicleta);
 		assertNotNull("Error: La velocidad es nula", bicicleta.getVelocidad());
 		assertNotNull("Error: El espacio es nulo", bicicleta.getEspacioRecorrido());
-		assertNotNull("Error: El piñon actual es nulo", bicicleta.getPinhonactual());
+		assertNotNull("Error: El piÃ±on actual es nulo", bicicleta.getPinhonactual());
 		assertNotNull("Error: El plato actual es nulo", bicicleta.getPlatoactual());
 		assertNotNull("Error: El radio de la rueda es nulo", bicicleta.getRadiorueda());
 	}
@@ -74,7 +74,7 @@ public class TestBicicleta {
 																	   bicicleta.getPlatos()[bicicleta.getPlatoactual()], 
 																	   bicicleta.getPinhones()[bicicleta.getPinhonactual()]);
 		
-		assertEquals("Error: El espacio recorrido de la bicicleta no es el correcta", espaciodelapedaladaesperado, bicicleta.getEspacioDePedalada(), 0);
+		assertEquals("Error: El espacio recorrido de la bicicleta no es el correcta", espaciodelapedaladaesperado, utilidadesBicicleta.espacioDePedalada(bicicleta.getRadiorueda(), bicicleta.getPlatos()[bicicleta.getPlatoactual()], bicicleta.getPinhones()[bicicleta.getPinhonactual()]), 0);
 		
 		
 		//se comprueba que la relacion de transmision sea la esperada
@@ -82,14 +82,14 @@ public class TestBicicleta {
 		double relaciondeetransmisionesperado = utilidadesBicicleta.relacionDeTransmision(bicicleta.getPlatos()[bicicleta.getPlatoactual()],
 																					     bicicleta.getPinhones()[bicicleta.getPinhonactual()]);
 		
-		assertEquals("Error: El espacio recorrido de la bicicleta no es el correcta", relaciondeetransmisionesperado, bicicleta.getRelacionDeTransmision(), 0);
+		assertEquals("Error: El espacio recorrido de la bicicleta no es el correcta", relaciondeetransmisionesperado, utilidadesBicicleta.relacionDeTransmision(bicicleta.getPlatos()[bicicleta.getPlatoactual()], bicicleta.getPinhones()[bicicleta.getPinhonactual()]), 0);
 		
 		
 		//se comprueba que el recorrido lineal sea el esperado
 		
 		double recorridoLinealDeLaRuedaesperado = utilidadesBicicleta.recorridoLinealDeLaRueda(bicicleta.getRadiorueda());
 		
-		assertEquals("Error: El espacio recorrido de la bicicleta no es el correcta", recorridoLinealDeLaRuedaesperado, bicicleta.getRecorridoLinealDeLaRueda(), 0);
+		assertEquals("Error: El espacio recorrido de la bicicleta no es el correcta", recorridoLinealDeLaRuedaesperado, utilidadesBicicleta.recorridoLinealDeLaRueda(bicicleta.getRadiorueda()), 0);
 		
 		
 		
@@ -111,19 +111,19 @@ public class TestBicicleta {
 		
 		
 		
-		//Se comprueban que los piñones se incremente y decrementen correctamente
+		//Se comprueban que los piï¿½ones se incremente y decrementen correctamente
 		
 		int incrementarpinhonesperado = bicicleta.getPinhonactual() +1;
 		
 		bicicleta.incrementarPinhon();
 		
-		assertEquals("Error: El incremento de piñon de la bicicleta no es la correcta", incrementarpinhonesperado, bicicleta.getPinhonactual(), 0);
+		assertEquals("Error: El incremento de piï¿½on de la bicicleta no es la correcta", incrementarpinhonesperado, bicicleta.getPinhonactual(), 0);
 		
 		int decrementarpinhonesperado = bicicleta.getPinhonactual() -1;
 			
 		bicicleta.decrementarPinhon();
 		
-		assertEquals("Error: El decremento de piñon de la bicicleta no es la correcta", decrementarpinhonesperado, bicicleta.getPinhonactual(), 0);
+		assertEquals("Error: El decremento de piï¿½on de la bicicleta no es la correcta", decrementarpinhonesperado, bicicleta.getPinhonactual(), 0);
 		
 		
 		
@@ -139,7 +139,7 @@ public class TestBicicleta {
 		
 		bicicleta.decrementarPlato();
 		
-		assertEquals("Error: El decremento de piñon de la bicicleta no es la correcta", decrementarplatoesperado, bicicleta.getPlatoactual(), 0);
+		assertEquals("Error: El decremento de piï¿½on de la bicicleta no es la correcta", decrementarplatoesperado, bicicleta.getPlatoactual(), 0);
 	}
 	
 }

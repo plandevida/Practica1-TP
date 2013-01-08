@@ -6,17 +6,23 @@ import interfaces.ObjetosConSalidaDeDatos;
 import entidades.bicicletas.Bicicleta;
 import entidades.tiempo.Reloj;
 
+/**
+ * Clase que representa un ciclista
+ * 
+ * @author dserrano
+ *
+ */
 public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
-	//la bicicleta que va a montar
+	// La bicicleta que va a montar
 	private Bicicleta bicicletamontada;
 	
-	//el reloj
+	// El reloj
 	private Reloj reloj;
 	
-	//la candencia de la pedalada del ciclista
+	// La candencia de la pedalada del ciclista
 	private double cadencia;
 	
-	//Variable que dice si el ciclista esta frenando
+	// Variable que dice si el ciclista esta frenando
 	private boolean frenando = false;
 
 	public Ciclista(String nombre, double cadenciaCiclista, Bicicleta bicicletaamontar, Reloj relojCiclista) {
@@ -30,6 +36,7 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 		bicicletamontada = bicicletaamontar;
 		reloj = relojCiclista;
 	}
+	
 	/**
 	 * Metodo que evalua la velociadad de la bicicleta, en fucion de ella
 	 * decide si frenar o serguir pedaleando.
@@ -53,6 +60,7 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 		
 		return true;
 	}
+	
 	/**
 	 * Metodo para obtener una salida de datos de un objeto.
 	 * 
@@ -69,6 +77,7 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 
 		return stringTokenizer;
 	}
+	
 	/**
 	 * Metodo que da pedaladas a la bicicleta
 	 *  
@@ -76,6 +85,7 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	private void pedalear() {
 		bicicletamontada.darPedalada(cadencia);
 	}
+	
 	/**
 	 * Obtiene la bicicleta que se esta montando.
 	 *  
@@ -84,6 +94,7 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	public Bicicleta getBicicletamontada() {
 		return bicicletamontada;
 	}
+	
 	/**
 	 * Cambia la bicicleta que se esta montando.
 	 * 
@@ -92,6 +103,7 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	public void setBicicletamontada(Bicicleta bicicletamontada) {
 		this.bicicletamontada = bicicletamontada;
 	}
+	
 	/**
 	 * Obtiene el reloj.
 	 *  
@@ -100,6 +112,7 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	public Reloj getReloj() {
 		return reloj;
 	}
+	
 	/**
 	 * Cambia el reloj.
 	 * 
@@ -108,6 +121,7 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	public void setReloj(Reloj reloj) {
 		this.reloj = reloj;
 	}
+	
 	/**
 	 * Obtiene la cadencia del ciclista
 	 *  
@@ -116,6 +130,7 @@ public class Ciclista extends Persona implements ObjetosConSalidaDeDatos {
 	public double getCadencia() {
 		return cadencia;
 	}
+	
 	/**
 	 * Cambia la candencia del ciclista.
 	 * 
